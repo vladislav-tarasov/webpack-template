@@ -1,22 +1,30 @@
 import logoImg from 'assets/peter.jpg';
 import 'styles/hello/styles.scss';
 
+import cloneTemplate from 'js/utils/cloneTemplate';
+
 const hello = {
+  logoTemplate: cloneTemplate('logo-template'),
+
+  get logo() {
+    return this.logoTemplate.querySelector('.logo');
+  },
+
+  get toggleThemeButton() {
+    return this.logoTemplate.querySelector('.button');
+  },
+
   render() {
-    const logoTemplate = document.getElementById('logo-template').content.cloneNode(true);
+    this.logo.src = logoImg;
+    this.logo.alt = 'logo';
 
-    const logo = logoTemplate.querySelector('.logo');
-    logo.src = logoImg;
-    logo.alt = 'logo';
-
-    const button = logoTemplate.querySelector('.button');
-    button.onclick = () => {
+    this.toggleThemeButton.onclick = () => {
       const theme = document.body.getAttribute('data-theme');
 
       document.body.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
     };
 
-    return logoTemplate;
+    return this.logoTemplate;
   },
 };
 
