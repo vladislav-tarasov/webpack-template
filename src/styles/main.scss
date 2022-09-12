@@ -1,0 +1,61 @@
+:root,
+body[data-theme='light'] {
+  --text-primary: rgb(0 0 0 / 87%);
+  --text-secondary: rgb(0 0 0 / 60%);
+  --text-disabled: rgb(0 0 0 / 38%);
+  --buttons-active: rgb(0 0 0 / 54%);
+  --buttons-hover: rgb(0 0 0 / 4%);
+  --buttons-selected: rgb(0 0 0 / 8%);
+  --buttons-disabled: rgb(0 0 0 / 26%);
+  --buttons-disabled-background: rgb(0 0 0 / 12%);
+  --buttons-background-default: #fff;
+  --buttons-background-paper: #fff;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+}
+
+body[data-theme='dark'] {
+  --text-primary: #fff;
+  --text-secondary: rgb(255 255 255 / 70%);
+  --text-disabled: rgb(255 255 255 / 50%);
+  --buttons-active: #fff;
+  --buttons-hover: rgb(255 255 255 / 8%);
+  --buttons-selected: rgb(255 255 255 / 16%);
+  --buttons-disabled: rgb(255 255 255 / 30%);
+  --buttons-disabled-background: rgb(255 255 255 / 12%);
+  --background-default: #121212;
+  --background-paper: #121212;
+}
+
+#app {
+  background-color: var(--background-default);
+  min-height: 100vh;
+}
+
+.button {
+  padding: var(--spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background-color: var(--background-default);
+  border: 0.5px solid;
+  border-color: var(--text-primary);
+  border-radius: 4px;
+  transition: 0.3s;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--buttons-hover);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: var(--text-disabled);
+    background-color: var(--buttons-disabled-background);
+    border-color: var(--text-disabled);
+  }
+}

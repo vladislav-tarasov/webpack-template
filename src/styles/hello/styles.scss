@@ -1,0 +1,20 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & > .logo {
+    width: 350px;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  & > .button {
+    margin: var(--spacing-4);
+  }
+}
